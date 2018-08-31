@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {activitiesList} from './mocks/activities';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent implements OnInit {
   title = 'hww';
+  public activitiesList = activitiesList;
   ngOnInit() {
     $(document).ready(function(c) {
       $('.log-close').on('click', function(c){
