@@ -11,6 +11,7 @@
 						<li><a href="#" (click)="criteriaClicked('Hotel')">Hotel</a></li>
 						<li><a href="#" (click)="criteriaClicked('Fishing')">Fishing</a></li>
 						<li><a href="#" (click)="criteriaClicked('Tours')">Tours</a></li>
+						<li><a href="#" (click)="criteriaClicked('')">All</a></li>
 						<li class="anc-bor"><a href="#" (click)="criteriaClicked('Weather')">Weather</a></li>
 					</ul>
 				</div>
@@ -21,7 +22,7 @@
             <div class="scrollbar" id="style-2">
               
               <div *ngIf="activitiesList$ | async as activitiesList">
-                <div (click)="hotelClick(a.address1)" class="activity-row" *ngFor="let a of activitiesList">
+                <div (click)="hotelClick(a.address1)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria">
                   <div class="activity-desc">
                     <h5>Resort Address</h5>
                     <p>{{a.address1}}</p>

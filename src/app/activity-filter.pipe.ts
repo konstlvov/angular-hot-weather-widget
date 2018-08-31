@@ -5,8 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ActivityFilterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  // todo: надо определить тип для activities
+  transform(activities: any[], filterCriteria: string): any {
+    if (!filterCriteria) {
+      return activities;
+    }
+    return activities.filter(a => a.actType === filterCriteria);
   }
 
 }
