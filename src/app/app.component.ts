@@ -12,8 +12,10 @@ export class AppComponent implements OnInit {
   public activitiesList = activitiesList;
   public activitiesList$ = activitiesList$;
   public filterCriteria: string = '';
-  public hotelClick(arg) {
-    console.log('some hotel clicked: ' + arg);
+  public currentAirTemp: string = '14';
+  public currentWaterTemp: string = '20';
+  public hotelClick(activity) {
+    console.log(activity.address1);
   }
   public criteriaClicked(whatClicked) {
     this.filterCriteria = whatClicked;

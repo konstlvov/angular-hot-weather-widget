@@ -22,7 +22,7 @@
             <div class="scrollbar" id="style-2">
               
               <div *ngIf="activitiesList$ | async as activitiesList">
-                <div (click)="hotelClick(a.address1)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria">
+                <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria">
                   <div class="activity-desc">
                     <h5>Resort Address</h5>
                     <p>{{a.address1}}</p>
