@@ -12,12 +12,12 @@ export class AppComponent implements OnInit {
   public activitiesList = activitiesList;
   public activitiesList$ = activitiesList$;
   ngOnInit() {
-    $(document).ready(function(c) {
-      $('.log-close').on('click', function(c){
-        $('.login-bottom').fadeOut('slow', function(c){
-            $('.login-bottom').remove();
-        });
-      });	  
-    });
+    //$(document).ready(function(c) {
+    //  $('.log-close').on('click', function(c){
+    //    $('.login-bottom').fadeOut('slow', function(c){
+    //        $('.login-bottom').remove();
+    //    });
+    //  });	  
+    //});
   }
 }
