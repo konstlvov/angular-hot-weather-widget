@@ -11,6 +11,9 @@ export class AppComponent implements OnInit {
   title = 'hww';
   public activitiesList = activitiesList;
   public activitiesList$ = activitiesList$;
+  public hotelClick(arg) {
+    console.log('some hotel clicked: ' + arg);
+  }
   ngOnInit() {
     //$(document).ready(function(c) {
     //  $('.log-close').on('click', function(c){
