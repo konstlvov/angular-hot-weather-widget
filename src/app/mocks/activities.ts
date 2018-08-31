@@ -7,3 +7,4 @@ const activities = [
 ];
 
 export const activitiesList = activities;
+export const activitiesList$ = of(activities);
