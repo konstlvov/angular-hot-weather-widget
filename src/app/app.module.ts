@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ActivityFilterPipe } from './activity-filter.pipe';
+import { TemperatureWidgetComponent } from './temperature-widget/temperature-widget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ActivityFilterPipe
+    ActivityFilterPipe,
+    TemperatureWidgetComponent
   ],
   imports: [
     BrowserModule
