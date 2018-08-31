@@ -11,8 +11,13 @@ export class AppComponent implements OnInit {
   title = 'hww';
   public activitiesList = activitiesList;
   public activitiesList$ = activitiesList$;
+  public filterCriteria: string = '';
   public hotelClick(arg) {
     console.log('some hotel clicked: ' + arg);
+  }
+  public criteriaClicked(whatClicked) {
+    this.filterCriteria = whatClicked;
+    console.log(`Filter criteria now is ${this.filterCriteria}`);
   }
   ngOnInit() {
     //$(document).ready(function(c) {
