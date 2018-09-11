@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
   public filterCriteria: string = '';
   public currentAirTemp: string = '14';
   public currentWaterTemp: string = '20';
-  public currentFollowers: number = '100';
-  public currentFollowing: number = '500';
+  public currentFollowers: number = 100;
+  public currentFollowing: number = 500;
   public hotelClick(activity) {
     //console.log(activity.address1);
     this.currentAirTemp = activity.airTemp;
