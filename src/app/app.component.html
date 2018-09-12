@@ -25,8 +25,8 @@
                 <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria">
                   <div class="activity-desc">
                     <h5>Resort Address</h5>
-                    <p>{{a.address1}}</p>
-                    <p>{{a.address2}}</p>
+                    <p>{{a.address.address1}}</p>
+                    <p>{{a.address.address2}}</p>
                     <h6>{{a.phone}}</h6>
                   </div>
                   <div class="activity-img">
