@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ActivityFilterPipe implements PipeTransform {
 
   // done: надо определить тип для activities
-  transform(activities: IActivity[], filterCriteria: string): any {
+  transform(activities: IActivity[], filterCriteria: string): IActivity[] {
     if (!filterCriteria) {
       return activities;
     }
