@@ -8,8 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class SocialWidgetComponent implements OnInit {
 
-  @Input() public followers: number = 0;
-  @Input() public following: number = 0;
+  @Input() public socialInfo: ISocialInfo;
   constructor() { }
 
   ngOnInit() {

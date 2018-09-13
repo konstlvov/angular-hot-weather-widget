@@ -6,8 +6,7 @@
   <div class="element-right">
       <!-- todo: спросить, как это правильно делать, чтобы два раза не писать тернарный оператор - здесь и в шаблоне -->
       <app-temperature-widget [weather]="currentActivity? currentActivity.weather : null"></app-temperature-widget>
-      <app-social-widget [followers]="currentActivity? currentActivity.socialInfo.followers : '--'"
-       [following]="currentActivity? currentActivity.socialInfo.following : '--'"></app-social-widget>
+      <app-social-widget [socialInfo]="currentActivity? currentActivity.socialInfo : null"></app-social-widget>
     </div>
     <div class="clear"> </div>
 </div>
