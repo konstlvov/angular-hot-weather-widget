@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { ActivityFilterPipe } from './activity-filter.pipe';
 import { TemperatureWidgetComponent } from './temperature-widget/temperature-widget.component';
 import { SocialWidgetComponent } from './social-widget/social-widget.component';
+import { ActivitiesWidgetComponent } from './activities-widget/activities-widget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ActivityFilterPipe,
     TemperatureWidgetComponent,
-    SocialWidgetComponent
+    SocialWidgetComponent,
+    ActivitiesWidgetComponent
   ],
   imports: [
     BrowserModule

@@ -3,51 +3,50 @@
 -->
 <h1>Hot Weather Widget</h1>
 <div class="element">
-    <div class="element-left">
-      <div class="element-bg-img"><img src="images/1.jpg" alt="" class="img-responsive"> </div>
-      <div class="element-left-bottom">
-        <div class="ele-strip">
-          <ul>
-            <li><a href="#" (click)="criteriaClicked('Hotel')">Hotel</a></li>
-            <li><a href="#" (click)="criteriaClicked('Fishing')">Fishing</a></li>
-            <li><a href="#" (click)="criteriaClicked('Tours')">Tours</a></li>
-            <li><a href="#" (click)="criteriaClicked('')">All</a></li>
-            <li class="anc-bor"><a href="#" (click)="criteriaClicked('Weather')">Weather</a></li>
-          </ul>
-        </div>
-        <div class="village">
-          <h3>Righteous indignation &amp; like</h3>
-          <span class="line"></span>
-          <div class="activity_box">
-            <div class="scrollbar" id="style-2">
-              
-              <div *ngIf="activitiesList$ | async as activitiesList">
-                <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria">
-                  <div class="activity-desc">
-                    <h5>Resort Address</h5>
-                    <p>{{a.address.address1}}</p>
-                    <p>{{a.address.address2}}</p>
-                    <h6>{{a.phone}}</h6>
+  <div class="element-left">
+        <div class="element-bg-img"><img src="images/1.jpg" alt="" class="img-responsive"> </div>
+        <div class="element-left-bottom">
+          <div class="ele-strip">
+            <ul>
+              <li><a href="#" (click)="criteriaClicked('Hotel')">Hotel</a></li>
+              <li><a href="#" (click)="criteriaClicked('Fishing')">Fishing</a></li>
+              <li><a href="#" (click)="criteriaClicked('Tours')">Tours</a></li>
+              <li><a href="#" (click)="criteriaClicked('')">All</a></li>
+              <li class="anc-bor"><a href="#" (click)="criteriaClicked('Weather')">Weather</a></li>
+            </ul>
+          </div>
+          <div class="village">
+            <h3>Righteous indignation &amp; like</h3>
+            <span class="line"></span>
+            <div class="activity_box">
+              <div class="scrollbar" id="style-2">
+                
+                <div *ngIf="activitiesList$ | async as activitiesList">
+                  <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria">
+                    <div class="activity-desc">
+                      <h5>Resort Address</h5>
+                      <p>{{a.address.address1}}</p>
+                      <p>{{a.address.address2}}</p>
+                      <h6>{{a.phone}}</h6>
+                    </div>
+                    <div class="activity-img">
+                      <ul>
+                        <li>
+                          <img src='images/res.jpg' alt="" />
+                        </li>
+                        <li>
+                          <img src='images/r1.jpg' alt="" />
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="clear"></div>
                   </div>
-                  <div class="activity-img">
-                    <ul>
-                      <li>
-                        <img src='images/res.jpg' alt="" />
-                      </li>
-                      <li>
-                        <img src='images/r1.jpg' alt="" />
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="clear"></div>
                 </div>
               </div>
-
             </div>
           </div>
-        </div>
-     </div>
-</div>
+       </div>
+  </div>
   <div class="element-right">
       <app-temperature-widget [airTemp]="currentActivity? currentActivity.weather.airTemp : '--'"
        [waterTemp]="currentActivity? currentActivity.weather.waterTemp : '--'"></app-temperature-widget>
