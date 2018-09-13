@@ -2,6 +2,6 @@
 				<h5>Et harum quidem</h5>
 				<span class="w-line"> </span>
 				<span class="cloud"> </span>
-        <h2>{{airTemp}}<sup class="degree">°</sup></h2>
-        <h6>Water {{waterTemp}}<sup class="degree">°</sup></h6>
+        <h2>{{weather ? weather.airTemp : '--'}}<sup class="degree">°</sup></h2>
+        <h6>Water {{weather? weather.waterTemp : '--'}}<sup class="degree">°</sup></h6>
 			</div>

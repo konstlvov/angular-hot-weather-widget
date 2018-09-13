@@ -10,12 +10,10 @@ import {activitiesList$} from '../mocks/activities';
 export class ActivitiesWidgetComponent implements OnInit {
   public filterCriteria: string;
   @Output() public clickEE: EventEmitter<IActivity> = new EventEmitter();
-  public currentActivity: IActivity;
   public activitiesList$: Observable<IActivity[]> = activitiesList$;
   
   public hotelClick(activity: IActivity) {
-    this.currentActivity = activity; // ?? this.currentActivity might be obsolete...
-    this.clickEE.emit(this.currentActivity);
+    this.clickEE.emit(activity);
   }
 
   public criteriaClicked(whatClicked) {

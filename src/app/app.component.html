@@ -4,8 +4,8 @@
     <app-activities-widget (clickEE)="hotelClicked($event)"></app-activities-widget>
   </div>
   <div class="element-right">
-      <app-temperature-widget [airTemp]="currentActivity? currentActivity.weather.airTemp : '--'"
-       [waterTemp]="currentActivity? currentActivity.weather.waterTemp : '--'"></app-temperature-widget>
+      <!-- todo: спросить, как это правильно делать, чтобы два раза не писать тернарный оператор - здесь и в шаблоне -->
+      <app-temperature-widget [weather]="currentActivity? currentActivity.weather : null"></app-temperature-widget>
       <app-social-widget [followers]="currentActivity? currentActivity.socialInfo.followers : '--'"
        [following]="currentActivity? currentActivity.socialInfo.following : '--'"></app-social-widget>
     </div>
