@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
   public currentFollowing: number = 500;
   public hotelClick(activity) {
     //console.log(activity.address1);
-    this.currentAirTemp = activity.airTemp;
-    this.currentWaterTemp = activity.waterTemp;
-    this.currentFollowers = activity.followers;
-    this.currentFollowing = activity.following;
+    this.currentAirTemp = activity.weather.airTemp;
+    this.currentWaterTemp = activity.weather.waterTemp;
+    this.currentFollowers = activity.socialInfo.followers;
+    this.currentFollowing = activity.socialInfo.following;
   }
   public criteriaClicked(whatClicked) {
     this.filterCriteria = whatClicked;
