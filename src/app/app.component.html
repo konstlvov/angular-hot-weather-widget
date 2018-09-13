@@ -49,8 +49,10 @@
      </div>
 </div>
   <div class="element-right">
-      <app-temperature-widget *ngIf="currentActivity" [airTemp]="currentActivity.weather.airTemp : '---'" [waterTemp]="currentWaterTemp"></app-temperature-widget>
-      <app-social-widget *ngIf="currentActivity" [followers]="currentFollowers" [following]="currentFollowing"></app-social-widget>
+      <app-temperature-widget [airTemp]="currentActivity? currentActivity.weather.airTemp : '--'"
+       [waterTemp]="currentActivity? currentActivity.weather.waterTemp : '--'"></app-temperature-widget>
+      <app-social-widget [followers]="currentActivity? currentActivity.socialInfo.followers : '--'"
+       [following]="currentActivity? currentActivity.socialInfo.following : '--'"></app-social-widget>
     </div>
     <div class="clear"> </div>
 </div>
