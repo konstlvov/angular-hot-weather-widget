@@ -15,12 +15,14 @@ export class AppComponent implements OnInit {
   public currentWaterTemp: string = '20';
   public currentFollowers: number = 100;
   public currentFollowing: number = 500;
+  public currentActivity: IActivity;
   public hotelClick(activity) {
+    this.currentActivity = activity;
     //console.log(activity.address1);
-    this.currentAirTemp = activity.weather.airTemp;
-    this.currentWaterTemp = activity.weather.waterTemp;
-    this.currentFollowers = activity.socialInfo.followers;
-    this.currentFollowing = activity.socialInfo.following;
+    //this.currentAirTemp = activity.weather.airTemp;
+    //this.currentWaterTemp = activity.weather.waterTemp;
+    //this.currentFollowers = activity.socialInfo.followers;
+    //this.currentFollowing = activity.socialInfo.following;
   }
   public criteriaClicked(whatClicked) {
     this.filterCriteria = whatClicked;
