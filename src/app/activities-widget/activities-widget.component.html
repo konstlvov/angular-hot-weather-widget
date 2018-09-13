@@ -2,11 +2,9 @@
         <div class="element-left-bottom">
           <div class="ele-strip">
             <ul>
-              <li><a href="#" (click)="criteriaClicked('Hotel')">Hotel</a></li>
-              <li><a href="#" (click)="criteriaClicked('Fishing')">Fishing</a></li>
-              <li><a href="#" (click)="criteriaClicked('Tours')">Tours</a></li>
-              <li><a href="#" (click)="criteriaClicked('')">All</a></li>
-              <li class="anc-bor"><a href="#" (click)="criteriaClicked('Weather')">Weather</a></li>
+              <li *ngFor="let actType of actTypes; last as isLast" [ngClass]="isLast? 'anc-bor' : ''">
+                <a href="#" (click)="criteriaClicked(actType)">{{actType}}</a>
+              </li>
             </ul>
           </div>
           <div class="village">

@@ -1,4 +1,5 @@
-import { Component, OnInit, EventEmitter, Output, Observable } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {Observable} from 'rxjs';
 import {activitiesList$} from '../mocks/activities';
 
 @Component({
@@ -11,6 +12,8 @@ export class ActivitiesWidgetComponent implements OnInit {
   public filterCriteria: string;
   @Output() public clickEE: EventEmitter<IActivity> = new EventEmitter();
   public activitiesList$: Observable<IActivity[]> = activitiesList$;
+  // а можно сделать вообще по-умному (c) rooksgc: this.actTypes = new Set(this.places.map(el => el.type));
+  public actTypes: string[] = ['Hotel', 'Fishing', 'Tours', 'All'];
 
   public currentActivity: IActivity = null;
   

@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ActivityFilterPipe implements PipeTransform {
 
   transform(activities: IActivity[], filterCriteria: string): IActivity[] {
-    if (!filterCriteria) {
+    if (!filterCriteria || filterCriteria === 'All') {
       return activities;
     }
     return activities.filter(a => a.actType === filterCriteria);
