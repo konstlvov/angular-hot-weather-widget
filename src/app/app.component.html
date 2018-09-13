@@ -1,10 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.
-<div style="text-align:center">app-root is empty for moment</div>
--->
 <h1>Hot Weather Widget</h1>
 <div class="element">
   <div class="element-left">
-        <app-activities-widget></app-activities-widget>
+    <app-activities-widget (clickEE)="hotelClicked($event)"></app-activities-widget>
   </div>
   <div class="element-right">
       <app-temperature-widget [airTemp]="currentActivity? currentActivity.weather.airTemp : '--'"

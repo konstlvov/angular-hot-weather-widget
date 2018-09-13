@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {activitiesList$} from '../mocks/activities';
 
 @Component({
@@ -8,16 +8,18 @@ import {activitiesList$} from '../mocks/activities';
 })
 
 export class ActivitiesWidgetComponent implements OnInit {
+  public filterCriteria: string;
+  @Output() public clickEE: EventEmitter<any> = new EventEmitter();
   public currentActivity: IActivity;
   public activitiesList$ = activitiesList$;
   
   public hotelClick(activity) {
-    this.currentActivity = activity;
+    this.currentActivity = activity; // ?? this.currentActivity might be obsolete...
+    this.clickEE.emit(this.currentActivity);
   }
 
   public criteriaClicked(whatClicked) {
     this.filterCriteria = whatClicked;
-    //console.log(`Filter criteria now is ${this.filterCriteria}`);
   }
 
   constructor() { }

@@ -10,4 +10,8 @@ export class AppComponent implements OnInit {
   title = 'hww';
   ngOnInit() {
   }
+  
+  public hotelClicked(a: IActivity): void {
+    console.log('hotel clicked: ' + a.actType);
+  }
 }
