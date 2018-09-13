@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {activitiesList, activitiesList$} from './mocks/activities';
+import {activitiesList$} from './mocks/activities';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,6 @@ import {activitiesList, activitiesList$} from './mocks/activities';
 
 export class AppComponent implements OnInit {
   title = 'hww';
-  public activitiesList = activitiesList;
   public activitiesList$ = activitiesList$;
   public filterCriteria: string = '';
   public currentAirTemp: string = '14';
