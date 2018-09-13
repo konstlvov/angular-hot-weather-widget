@@ -11,8 +11,11 @@ export class ActivitiesWidgetComponent implements OnInit {
   public filterCriteria: string;
   @Output() public clickEE: EventEmitter<IActivity> = new EventEmitter();
   public activitiesList$: Observable<IActivity[]> = activitiesList$;
+
+  public currentActivity: IActivity = null;
   
   public hotelClick(activity: IActivity) {
+    this.currentActivity = activity;
     this.clickEE.emit(activity);
   }
 

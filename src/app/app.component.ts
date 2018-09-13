@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   }
   
   public hotelClicked(a: IActivity): void {
-    //console.log('hotel clicked: ' + a.actType);
     this.currentActivity = a;
   }
 }

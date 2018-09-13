@@ -17,6 +17,7 @@ interface ISocialInfo {
 
 interface IActivity {
   actType: string;
+  image: string;
   address: IAddress;
   weather: IWeather;
   socialInfo: ISocialInfo;
