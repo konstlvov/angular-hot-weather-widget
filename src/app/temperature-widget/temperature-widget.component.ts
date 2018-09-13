@@ -9,6 +9,8 @@ export class TemperatureWidgetComponent implements OnInit {
 
   @Input() public airTemp: string = '20';
   @Input() public waterTemp: string = '14';
+  //todo: replace with weather: IWeather
+  @Input() public weather: IWeather;
   constructor() { }
 
   ngOnInit() {

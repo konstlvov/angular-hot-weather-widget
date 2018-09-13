@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
+  public currentActivity: IActivity;
   title = 'hww';
   ngOnInit() {
   }
   
   public hotelClicked(a: IActivity): void {
-    console.log('hotel clicked: ' + a.actType);
+    //console.log('hotel clicked: ' + a.actType);
+    this.currentActivity = a;
   }
 }
