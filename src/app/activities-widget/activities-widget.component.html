@@ -10,7 +10,7 @@
             </ul>
           </div>
           <div class="village">
-            <h3>Righteous indignation &amp; like</h3>
+            <h3>Выбирайте, где отдохнуть</h3>
             <span class="line"></span>
             <div class="activity_box">
               <div class="scrollbar" id="style-2">
@@ -18,7 +18,7 @@
                 <div *ngIf="activitiesList$ | async as activitiesList">
                   <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria">
                     <div class="activity-desc">
-                      <h5>Resort Address</h5>
+                      <h5>Адрес места</h5>
                       <p>{{a.address.address1}}</p>
                       <p>{{a.address.address2}}</p>
                       <h6>{{a.phone}}</h6>
