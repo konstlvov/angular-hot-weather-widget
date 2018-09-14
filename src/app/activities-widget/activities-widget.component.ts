@@ -24,6 +24,11 @@ export class ActivitiesWidgetComponent implements OnInit {
 
   public criteriaClicked(whatClicked) {
     this.filterCriteria = whatClicked;
+    //document.querySelector('.activity-row').click(); // this does not work properly
+  }
+
+  // заглушка, виден тип аргументов
+  public trackByFnActivities(index: number, item: IActivity): void {
   }
 
   constructor() { }
