@@ -14,8 +14,11 @@
               <div class="scrollbar" id="style-2">
                 
                 <div *ngIf="activitiesList$ | async as activitiesList; else loadingSpinner">
-                  <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria; trackBy: trackByFnActivities; first as isFirst">
-                     {{ isFirst ? hotelClick(a) : null }}
+                  <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria; trackBy: trackByFnActivities; first as isFirst; last as isLast">
+                    {{ isFirst ? hotelClick(a) : null }}
+                    <!--
+                    {{ isLast ? lastElementRendered() : null }}
+                    -->
                     <div class="activity-desc">
                       <h5>Адрес места</h5>
                       <p>{{a.address.address1}}</p>

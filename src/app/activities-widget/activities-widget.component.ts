@@ -18,13 +18,20 @@ export class ActivitiesWidgetComponent implements OnInit {
   public currentActivity: IActivity = null;
   
   public hotelClick(activity: IActivity) {
+    //console.log('hotelClick called: ' + activity.address.address1);
     this.currentActivity = activity;
-    this.clickEE.emit(activity);
+    //setTimeout(this.clickEE.emit(activity), 100); // this does not work properly
+    setTimeout( () => { // this works properly, but very slow
+      this.clickEE.emit(activity);
+    }, 0);
+  }
+
+  public lastElementRendered() {
+    //document.querySelector('.activity-row').click(); // this does not work properly
   }
 
   public criteriaClicked(whatClicked) {
     this.filterCriteria = whatClicked;
-    //document.querySelector('.activity-row').click(); // this does not work properly
   }
 
   // заглушка, виден тип аргументов
