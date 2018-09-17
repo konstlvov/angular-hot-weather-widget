@@ -23,17 +23,21 @@ export class ActivitiesWidgetComponent implements OnInit {
     this.clickEE.emit(activity);
   }
 
+  public clickHotel(h: HTMLElement) {
+    h.click();
+  }
+
   public lastElementRendered() {
     if (! this._initialized) {
       this._initialized = true;
-      setTimeout(() => {document.querySelector('.first_hotel').click()}, 0);
+      setTimeout(() => {this.clickHotel(document.querySelector('.first_hotel'))}, 0);
     }
   }
 
   public criteriaClicked(whatClicked) {
     this.filterCriteria = whatClicked;
     //document.querySelector('.first_hotel').click();
-    setTimeout(() => {document.querySelector('.first_hotel').click()}, 0);
+    setTimeout(() => {this.clickHotel(document.querySelector('.first_hotel'))}, 0);
     //document.querySelector('.activity-row').click(); // this does not work properly
   }
 

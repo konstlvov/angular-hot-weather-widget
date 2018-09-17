@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ActivityFilterPipe } from './activity-filter.pipe';
+import { ActivityFilterPipe } from './pipes/activity-filter.pipe';
 import { TemperatureWidgetComponent } from './temperature-widget/temperature-widget.component';
 import { SocialWidgetComponent } from './social-widget/social-widget.component';
 import { ActivitiesWidgetComponent } from './activities-widget/activities-widget.component';
