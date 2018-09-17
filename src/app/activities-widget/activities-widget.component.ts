@@ -21,9 +21,9 @@ export class ActivitiesWidgetComponent implements OnInit {
     //console.log('hotelClick called: ' + activity.address.address1);
     this.currentActivity = activity;
     //setTimeout(this.clickEE.emit(activity), 100); // this does not work properly
-    setTimeout( () => { // this works properly, but very slow
+    //setTimeout( () => { // this works sometimes (not always), but very slow and causes memory leak
       this.clickEE.emit(activity);
-    }, 0);
+    //}, 1);
   }
 
   public lastElementRendered() {
