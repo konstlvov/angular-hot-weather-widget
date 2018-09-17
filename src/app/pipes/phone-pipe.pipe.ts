@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PhonePipePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(phoneNum: string, args?: any): string {
+    return '***' + phoneNum + '***';
   }
 
 }
