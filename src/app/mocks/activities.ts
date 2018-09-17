@@ -22,4 +22,4 @@ const activities: IActivity[] = [
   }
 ];
 
-export const activitiesList$: Observable<IActivity[]> = of(activities).pipe(delay(3000));
+export const activities$: Observable<IActivity[]> = of(activities).pipe(delay(3000));

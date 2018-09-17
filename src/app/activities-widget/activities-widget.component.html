@@ -24,6 +24,8 @@
                     <!--
                     {{ isLast ? lastElementRendered() : null }}
                     -->
+                    <!-- this works properly with the help of _initialized private field -->
+                    {{ isLast ? lastElementRendered() : null }}
                     <div class="activity-desc">
                       <h5>Адрес места</h5>
                       <p>{{a.address.address1}}</p>

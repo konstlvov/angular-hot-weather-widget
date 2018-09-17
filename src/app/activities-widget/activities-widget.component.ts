@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {Observable} from 'rxjs';
-import {activitiesList$} from '../mocks/activities';
+import {activities$} from '../mocks/activities';
 
 @Component({
   selector: 'app-activities-widget',
@@ -9,9 +9,10 @@ import {activitiesList$} from '../mocks/activities';
 })
 
 export class ActivitiesWidgetComponent implements OnInit {
+  private _initialized: boolean = false;
   public filterCriteria: string;
   @Output() public clickEE: EventEmitter<IActivity> = new EventEmitter();
-  public activitiesList$: Observable<IActivity[]> = activitiesList$;
+  public activitiesList$: Observable<IActivity[]> = activities$;
   // а можно сделать вообще по-умному (c) rooksgc: this.actTypes = new Set(this.places.map(el => el.type));
   public actTypes: string[] = ['Hotel', 'Fishing', 'Tours', 'All'];
 
@@ -23,8 +24,10 @@ export class ActivitiesWidgetComponent implements OnInit {
   }
 
   public lastElementRendered() {
-    //console.log('lastElementRendered called');
-    //document.querySelector('.activity-row').click(); // this does not work properly
+    if (! this._initialized) {
+      this._initialized = true;
+      setTimeout(() => {document.querySelector('.first_hotel').click()}, 0);
+    }
   }
 
   public criteriaClicked(whatClicked) {
