@@ -5,8 +5,8 @@
   </div>
   <div class="element-right">
       <!-- todo: спросить, как это правильно делать, чтобы два раза не писать тернарный оператор - здесь и в шаблоне -->
-      <app-temperature-widget [weather]="currentActivity?.weather"></app-temperature-widget>
-      <app-social-widget [socialInfo]="currentActivity?.socialInfo"></app-social-widget>
+      <app-temperature-widget [weather]="currentAppActivity?.weather"></app-temperature-widget>
+      <app-social-widget [socialInfo]="currentAppActivity?.socialInfo"></app-social-widget>
   </div>
   <div class="clear"> </div>
 </div>
