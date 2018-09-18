@@ -1,4 +1,4 @@
-<div class="element-bg-img"><img src="images/{{currentActivity? currentActivity.image : '1.jpg'}}" alt="" class="img-responsive"> </div>
+<div class="element-bg-img"><img src="images/{{currentWidgetActivity? currentWidgetActivity.image : '1.jpg'}}" alt="" class="img-responsive"> </div>
         <div class="element-left-bottom">
           <div class="ele-strip">
             <ul>
@@ -14,13 +14,23 @@
               <div class="scrollbar" id="style-2">
                 
                 <div *ngIf="activitiesList$ | async as activitiesList; else loadingSpinner">
-                  <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria; first as isFirst">
-                    {{isFirst? hotelClick(a) : null}}
+                  <div (click)="hotelClick(a)" class="activity-row" *ngFor="let a of activitiesList | activityFilter:filterCriteria; first as isFirst; last as isLast"
+                                               [ngClass]="isFirst? 'first_hotel' : ''"
+                                               >
+                    <!--  // this does not work properly also -->
+                    <!--
+                    {{ isFirst ? hotelClick(a) : null }}
+                    -->
+                    <!--
+                    {{ isLast ? lastElementRendered() : null }}
+                    -->
+                    <!-- this works properly with the help of _initialized private field -->
+                    {{ isLast ? lastElementRendered() : null }}
                     <div class="activity-desc">
                       <h5>Адрес места</h5>
                       <p>{{a.address.address1}}</p>
                       <p>{{a.address.address2}}</p>
-                      <h6>{{a.phone}}</h6>
+                      <h6>{{a.address.phone | phonePipe}}</h6>
                     </div>
                     <div class="activity-img">
                       <ul>
