@@ -23,6 +23,7 @@ export class LivesearchWidgetComponent implements OnInit {
     this.typeahead = fromEvent(inpSearch, 'input').pipe(
        map((e: KeyboardEvent) => e.target.value)
       ,filter((userInput: string) => userInput.length > 2)
+      ,map(s => s.toUpperCase())
     );
     this.typeahead.subscribe(data => this.dbgMsg = data)
   }
