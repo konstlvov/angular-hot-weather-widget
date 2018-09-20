@@ -7,6 +7,7 @@ import { TemperatureWidgetComponent } from './temperature-widget/temperature-wid
 import { SocialWidgetComponent } from './social-widget/social-widget.component';
 import { ActivitiesWidgetComponent } from './activities-widget/activities-widget.component';
 import { PhonePipePipe } from './pipes/phone-pipe.pipe';
+import { LivesearchWidgetComponent } from './livesearch-widget/livesearch-widget.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PhonePipePipe } from './pipes/phone-pipe.pipe';
     TemperatureWidgetComponent,
     SocialWidgetComponent,
     ActivitiesWidgetComponent,
-    PhonePipePipe
+    PhonePipePipe,
+    LivesearchWidgetComponent
   ],
   imports: [
     BrowserModule
