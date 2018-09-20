@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, of, interval} from 'rxjs';
 import {activities$} from '../mocks/activities';
 
 @Component({
@@ -9,6 +9,8 @@ import {activities$} from '../mocks/activities';
 })
 
 export class ActivitiesWidgetComponent implements OnInit {
+  public secondInterval:Observable<any> = interval(1000);
+  public timerMsg: string;
   private _initialized: boolean = false;
   public filterCriteria: string;
   @Output() public clickEE: EventEmitter<IActivity> = new EventEmitter();
@@ -48,6 +50,8 @@ export class ActivitiesWidgetComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.secondInterval.subscribe(n => {
+      this.timerMsg = `Прошло ${n} секунд`});
   }
 
 }
