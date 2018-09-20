@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LivesearchWidgetComponent implements OnInit {
 
+  public dbgMsg: string = '...';
+  public results: string = '***';
   constructor() { }
+
+  public onInput(e: KeyboardEvent) {
+    this.dbgMsg = 'You entered: ' + e.target.value;
+  }
 
   ngOnInit() {
   }

@@ -1,0 +1,13 @@
+#inpSearch {
+    width: 50%;
+}
+
+#divResults {
+  background: gray;
+  font-size:0.7em;
+}
+
+#divdbgMsg {
+    background: #555;
+    font-size:0.5em;
+}
