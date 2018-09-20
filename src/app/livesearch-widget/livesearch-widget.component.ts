@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, fromEvent } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-livesearch-widget',
@@ -21,7 +21,8 @@ export class LivesearchWidgetComponent implements OnInit {
   public bindLiveSearch() {
     const inpSearch: HTMLElement = document.getElementById('inpSearch');
     this.typeahead = fromEvent(inpSearch, 'input').pipe(
-      map((e: KeyboardEvent) => e.target.value)
+       map((e: KeyboardEvent) => e.target.value)
+      ,filter((userInput: string) => userInput.length > 2)
     );
     this.typeahead.subscribe(data => this.dbgMsg = data)
   }
