@@ -12,7 +12,7 @@ export class LivesearchWidgetComponent implements OnInit {
 
   public dbgMsg: string = '...';
   public results: any;
-  public typeahead: Observable;
+  public typeahead: Observable<any>;
   constructor() { }
 
   public onInput(e: KeyboardEvent) {
