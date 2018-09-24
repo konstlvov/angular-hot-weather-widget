@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, fromEvent } from 'rxjs';
-import { map, filter, switchMap } from 'rxjs/operators';
+import { map, filter, switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
 
 @Component({
@@ -24,7 +24,8 @@ export class LivesearchWidgetComponent implements OnInit {
     this.typeahead = fromEvent(inpSearch, 'input').pipe(
        map((e: KeyboardEvent) => e.target.value)
       ,filter((userInput: string) => userInput.length > 2)
-      ,map(s => s.toUpperCase())
+      ,debounceTime(10)
+      ,distinctUntilChanged()
       ,switchMap((userInput) => ajax({"url": "http://localhost:8090/api/endpoint", "method": "POST", "body": {"rq": userInput}}))
     );
     this.typeahead.subscribe(data => {
