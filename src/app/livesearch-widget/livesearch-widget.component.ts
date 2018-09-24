@@ -11,7 +11,7 @@ import { ajax } from 'rxjs/ajax';
 export class LivesearchWidgetComponent implements OnInit {
 
   public dbgMsg: string = '...';
-  public results: any;
+  public results: IProduct[];
   public typeahead: Observable<any>;
   constructor() { }
 
