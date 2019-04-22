@@ -22,7 +22,7 @@ export class LivesearchWidgetComponent implements OnInit {
   public bindLiveSearch() {
     const inpSearch: HTMLElement = document.getElementById('inpSearch');
     this.typeahead = fromEvent(inpSearch, 'input').pipe(
-       map((e: KeyboardEvent) => e.target.value)
+       map((e: KeyboardEvent) => (e.target as HTMLTextAreaElement).value)
       ,filter((userInput: string) => userInput.length > 2)
       ,debounceTime(10)
       ,distinctUntilChanged()
