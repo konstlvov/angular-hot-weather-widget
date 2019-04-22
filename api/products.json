@@ -1,0 +1,44 @@
+{"data":
+  [
+    {
+      "_id": "1",
+    "title": "Обои",
+    "serial": 1045,
+    "author": "From Mental",
+    "price": 1500.85,
+    "src": "assets/img/img1.jpg"
+   }
+    ,{
+      "_id": "2",
+    "title": "Обои 2",
+    "serial": 1045,
+    "author": "Puma",
+    "price": 1500.85,
+    "src": "assets/img/img1.jpg"
+   }
+    ,{
+      "_id": "3",
+    "title": "Обои 3",
+    "serial": 1045,
+    "author": "Adidas",
+    "price": 1500.85,
+    "src": "assets/img/img1.jpg"
+   }
+    ,{
+      "_id": "4",
+    "title": "Обои 4",
+    "serial": 1045,
+    "author": "New Balance",
+    "price": 1500.85,
+    "src": "assets/img/img1.jpg"
+   }
+    ,{
+      "_id": "5",
+    "title": "Обои 5",
+    "serial": 1045,
+    "author": "XpeH",
+    "price": 1500.85,
+    "src": "assets/img/img1.jpg"
+   }
+  ]
+}
