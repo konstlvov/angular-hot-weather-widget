@@ -1,1 +1,2 @@
-node app.js
+rem node app.js
+nodemon app.js
